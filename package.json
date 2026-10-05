@@ -1,5 +1,9 @@
 {
   "scripts": {
+    "dev": "powershell -ExecutionPolicy Bypass -File scripts/preview.ps1",
+    "build": "powershell -ExecutionPolicy Bypass -File scripts/build.ps1",
+    "cv": "powershell -ExecutionPolicy Bypass -File scripts/build-cv.ps1",
+    "test:preview": "node scripts/verify-preview.mjs",
     "lint:prettier": "prettier . --check",
     "lint:style-contract": "node test/style_contract.js",
     "test:visual": "playwright test --config test/visual/playwright.config.js",

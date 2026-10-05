@@ -1,0 +1,31 @@
+- role: Graduate Student Researcher
+  organization: Human-Centered Robotics Lab, UMass Amherst
+  url: https://hcr.cs.umass.edu/
+  dates: May 2026 – Present
+  location: Amherst, MA
+  summary: >-
+    Developing a goal-conditioned Unitree Go2 navigation policy that combines RGB, IMU, and GPS histories through transformer-based temporal fusion and rectified flow matching. Built PyTorch data and training pipelines over 156 training recordings (55,079 samples) and 21 validation recordings (7,813 samples), causally aligning asynchronous sensor streams into 5 Hz contexts. Integrating a ROS 2 deployment stack with distributed encoders, bounded buffers, stale-data checks, command validation, guarded autonomy handoff, and logging for real-robot trials.
+
+- role: Data Scientist
+  organization: Genpact
+  dates: June 2024 – June 2025
+  location: New Delhi, India
+  summary: Built regulatory monitoring, search, and structured summarization systems. Azure OpenAI summarization reduced client documentation effort by over 50%, and search tooling reduced document discovery time by 30%.
+
+- role: Software Engineer
+  organization: Amazon Robotics
+  dates: July 2022 – February 2024
+  location: Boston, MA
+  summary: Built AWS Kinesis applications for robotic workcell data and maintained a data lake with over 400 tables and 400 TB of monthly streaming data.
+
+- role: Machine Learning Research Intern
+  organization: Environmental Risks and Sustainability Lab, Helmholtz UFZ
+  dates: May – August 2021
+  location: Leipzig, Germany
+  summary: Advised by Prof. Christian Kuhlicke. Trained BERT classifiers for natural-hazards literature and studied topic evolution with LDA, embeddings, and graph visualizations.
+
+- role: Data Science Research Intern
+  organization: ZERO Lab, Princeton University
+  dates: May – September 2020
+  location: Princeton, NJ
+  summary: Advised by Prof. Jesse Jenkins. Developed data-processing and optimization scripts for electricity-generation siting and R-based geospatial visualizations.

@@ -1,0 +1,48 @@
+name: Build and deploy al-folio
+on:
+  push:
+    branches: [main, personal-site]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install image tools
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+      - name: Verify required personal assets
+        run: |
+          test -s assets/img/bharat-govil.jpg
+          test -s assets/pdf/Bharat_Govil_CV.pdf
+      - name: Build
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
