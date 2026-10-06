@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Multimodal Navigation for Quadruped Robots"
+title: "Multimodal Flow-Matching Navigation for a Quadruped Robot"
 permalink: /projects/multimodal-navigation/
-description: "Learning a goal-conditioned Unitree Go2 policy from asynchronous RGB, IMU, and GPS histories, with temporal transformer fusion and a guarded ROS 2 deployment stack."
+description: "Learning a Unitree Go2 navigation policy from visual, inertial, and goal histories, with flow matching and conservative or faster demonstration-style conditioning."
 importance: 1
 period: "May 2026 – Present"
 status: "Ongoing research · UMass HCR Lab"
@@ -10,20 +10,24 @@ status: "Ongoing research · UMass HCR Lab"
 
 ## Research question
 
-How can a legged robot combine visual, inertial, and sparse global-position information over time to navigate in real environments?
+How can a quadruped combine recent visual, inertial, and goal information to generate navigation commands, and how does conditioning on different demonstration styles affect its behavior?
+
+This ongoing research is based in the Human-Centered Robotics Lab at UMass Amherst under Prof. Hao Zhang.
 
 ## Approach
 
-The policy combines RGB observations, inertial measurements, and goal-conditioned GPS histories. I causally align 15 Hz RGB, 100 Hz IMU, and 5 Hz GPS streams into 5 Hz contexts, preserving the information available at each decision time. Transformer-based temporal fusion combines these histories for a rectified-flow action policy.
+The policy encodes RGB images, IMU measurements, and goal-conditioned GPS features, fuses their histories with a temporal transformer, and uses rectified flow matching to generate short sequences of forward, lateral, and turning commands. Auxiliary classifiers support guidance toward 'safer' or 'faster' demonstration styles, allowing us to study how observation context and requested behavior influence generated trajectories.
+
+I causally align 15 Hz RGB, 100 Hz IMU, and 5 Hz GPS streams into 5 Hz policy contexts, preserving only the information available at each decision time. The data pipeline constructs observation histories and rejects incomplete action targets.
 
 ## My contribution
 
-I built the PyTorch data and training pipelines over 156 training recordings (55,079 samples) and 21 validation recordings (7,813 samples). This work connects asynchronous sensor processing, temporal representation learning, and action-policy training.
+I built the PyTorch data and training pipelines through ~180 recordings of real-world training data and contributed to the multimodal policy's flow-matching training and inference workflow.
 
-I am also integrating the policy into a 5 Hz ROS 2 deployment stack. The integration includes distributed encoders, bounded buffers, stale-data detection, command validation, guarded autonomy handoff, and logging for real-robot trials.
+I have integrated components of the ROS 2 deployment stack for checkpoint inference and guarded robot control. This work includes distributed encoders, bounded observation buffers, stale-data detection, command validation, and autonomy handoff; full robot deployment integration remains in progress.
 
 ## Current status
 
-Policy development and deployment integration are ongoing. The recording and sample counts describe the training and validation pipeline; they are not a reported navigation-success result.
+Offline training and evaluation and robot deployment integration are ongoing. "Safe" and "Fast" labels describe recording styles and navigational intent, not independently verified collision safety. 
 
 [Human-Centered Robotics Lab](https://hcr.cs.umass.edu/)

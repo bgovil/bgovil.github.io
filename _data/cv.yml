@@ -32,10 +32,8 @@ cv:
         start_date: "2026-05"
         end_date: present
         highlights:
-          - Developing a goal-conditioned Unitree Go2 navigation policy that fuses RGB, IMU, and GPS histories through transformer-based temporal fusion and rectified flow matching.
-          - Built PyTorch data and training pipelines over 156 training recordings (55,079 samples) and 21 validation recordings (7,813 samples).
-          - Causally aligned 15 Hz RGB, 100 Hz IMU, and 5 Hz GPS streams into 5 Hz contexts.
-          - Integrating a 5 Hz ROS 2 deployment stack with distributed encoders, bounded buffers, guarded autonomy handoff, stale-data detection, command validation, and trial logging.
+          - Developing a Unitree Go2 navigation policy under Prof. Hao Zhang using multimodal temporal fusion, rectified flow matching, and demonstration-style conditioning.
+          - Built causal sensor-alignment and PyTorch training pipelines; integrating ROS 2 inference and guarded robot control.
       - company: Helmholtz UFZ
         position: Machine Learning Research Intern
         start_date: "2021-05"

@@ -4,7 +4,7 @@
   dates: May 2026 – Present
   location: Amherst, MA
   summary: >-
-    Developing a goal-conditioned Unitree Go2 navigation policy that combines RGB, IMU, and GPS histories through transformer-based temporal fusion and rectified flow matching. Built PyTorch data and training pipelines over 156 training recordings (55,079 samples) and 21 validation recordings (7,813 samples), causally aligning asynchronous sensor streams into 5 Hz contexts. Integrating a ROS 2 deployment stack with distributed encoders, bounded buffers, stale-data checks, command validation, guarded autonomy handoff, and logging for real-robot trials.
+    Developing a multimodal flow-matching navigation policy for a Unitree Go2 under Prof. Hao Zhang, with conservative and faster demonstration-style conditioning. Built causal sensor-alignment and PyTorch training pipelines; integrating ROS 2 inference and guarded robot control.
 
 - role: Data Scientist
   organization: Genpact

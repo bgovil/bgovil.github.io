@@ -1,6 +1,6 @@
 # Bharat Govil's al-folio website
 
-This is the active al-folio migration in `bharat-govil-al-folio`. The earlier Next.js site remains in the adjacent `bharat-govil-site` directory as a backup.
+This is the active al-folio migration in `bharat-govil-al-folio`. The obsolete `bharat-govil-site` directory and its local dependencies and build output were removed on October 5, 2026. Its complete committed source history is preserved in `../.website-backups/bharat-govil-site-20261005.bundle`; dependencies and generated files are not included in this backup.
 
 The source is the actual al-folio v1 starter, pinned by its original Gemfile.lock and plugin versions. The homepage follows the structure of https://adrianhuang2002.github.io/: introduction with a portrait, Publications, Experience, Education, then Projects.
 
